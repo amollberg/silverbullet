@@ -336,7 +336,7 @@ async function cachedFetch(path: string): Promise<string> {
       redirect: "manual",
       // Tinyauth/forward-auth can take longer than 1s on cold or remote auth checks.
       // Keep this bounded, but do not abort normal authenticated startup requests too aggressively.
-      signal: AbortSignal.timeout(10000),
+      signal: AbortSignal.timeout(1500),
       headers: {
         "X-Sync-Mode": "1",
       },
